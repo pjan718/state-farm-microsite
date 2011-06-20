@@ -1,0 +1,41 @@
+<h1>Charity Resource Page</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Visible</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= post.name %></td>
+    <td><%= post.description %></td>
+    <td><%= if admin_signed_in? 
+	      post.visible 
+	    end
+	%>
+    </td>
+    <td><%= link_to 'Show', post %></td>
+    <td><%= if admin_signed_in? 
+	    link_to 'Edit', edit_post_path(post) 
+	    end %>
+    </td>
+    <td><%= if admin_signed_in? 
+		link_to 'Delete', post, :confirm => 'Are you sure?', :method => :delete 
+	    end
+	%>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= if admin_signed_in? 
+	link_to 'New Post', new_post_path 
+    end
+%>

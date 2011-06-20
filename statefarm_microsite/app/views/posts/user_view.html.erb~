@@ -1,0 +1,61 @@
+<h1>Charity Resource Page</h1>
+
+<p>
+Here you'll find resources to help you promote your charity's GTB team on facebook.
+</p>
+
+<table>
+  <tr>
+    <th></th>
+    <th>Description</th>
+    <th></th>
+  </tr>
+
+<% @posts.each do |post| %>
+  if post.visible?
+      <tr>
+	
+	<td><%= if post.photo?
+		  # image_tag post.photo.url 
+		end %>
+	</td>
+	<td><%= post.description %>
+	<br/>
+	<p>Posted <%= post.created_at.strftime("%Y-%m-%d %H:%M:%S").to_s %> </p>
+	</td>
+	
+
+	<td><a href='#'>> Copy Text</a><br>
+		<%= 
+		if post.photo?
+		    link_to '> Download Image', post.photo.url.to_s
+		    # puts '<br/>'
+		end
+		  %>
+		  <% 
+		if post.photo?
+	      %>	<br/>
+	      
+	      <% end  %>
+		  <%= 
+		if post.video?
+		    link_to '> Copy Video URL', post.video.url.to_s
+		    # puts '<br/>'
+		end
+		  %>
+		  <% 
+		if post.video?
+	      %>	<br/>
+	      
+	      <% end  %>
+		
+		  
+	</td>
+	
+      </tr>
+<%	end
+  end %>
+</table>
+
+<br />
+

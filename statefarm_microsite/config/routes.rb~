@@ -1,10 +1,8 @@
 StatefarmMicrosite::Application.routes.draw do
-  devise_for :users
-
   devise_for :admins
 
-  root :to => 'posts#user_view'
   resources :posts
+  root :to => 'posts#user_view'
   # match '/' => :controller => 'posts', :action => 'user_view'
   
   # The priority is based upon order of creation:

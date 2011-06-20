@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <b>Name:</b>
+  <%= @post.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @post.description %>
+</p>
+
+<p>
+<b>Image:</b>
+<%= image_tag @post.photo.url %>
+</p>
+
+<p>
+<b>Video:</b>
+<%= if @post.video? then
+      link_to @post.video.url, 'Video Link' 
+    end 
+%>
+</p>
+<p>
+  <b>Visible:</b>
+  <%= @post.visible %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Posts Home', posts_path %>
