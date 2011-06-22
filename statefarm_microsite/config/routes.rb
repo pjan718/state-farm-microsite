@@ -4,6 +4,7 @@ StatefarmMicrosite::Application.routes.draw do
   
   root :to => 'posts#user_view'
   match '/admin' => 'posts#index'
+  resources :headings
   scope :module => "admin" do
     resources :posts
   end
