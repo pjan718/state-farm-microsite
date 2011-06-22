@@ -4,6 +4,12 @@
 Here you'll find resources to help you promote your charity's GTB team on facebook.
 </p>
 
+<div>
+<%= Heading.find(:first, :conditions => ['visible = ?', true]).title.to_s %><br/>
+<%= Heading.Heading.find(:first, :conditions => ['visible = ?', true]).header2.to_s %><br/>
+
+</div>
+
 <table>
   <tr>
     <th></th>
@@ -25,7 +31,7 @@ Here you'll find resources to help you promote your charity's GTB team on facebo
 	</td>
 	
 
-	<td><a id='textlink' href='#'>> Copy Text</a><br>
+	<td><a id='copy-description' href='#'>> Copy Text</a><br>
 		<%= 
 		if post.photo?
 		    link_to '> Download Image', post.photo.url.to_s

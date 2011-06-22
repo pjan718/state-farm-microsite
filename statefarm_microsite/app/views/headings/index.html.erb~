@@ -1,9 +1,5 @@
 <h1>Listing headings</h1>
 
-<div>
-<p>Only the first header set as 'visible' will be displayed on the view page</p>
-</div>
-
 <table>
   <tr>
     <th>Title</th>

@@ -16,7 +16,7 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label "Second Heading" %><br />
+    <%= f.label :header2 %><br />
     <%= f.text_area :header2 %>
   </div>
   <div class="field">

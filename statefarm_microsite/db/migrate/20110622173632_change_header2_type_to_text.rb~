@@ -1,9 +1,9 @@
 class ChangeHeader2TypeToText < ActiveRecord::Migration
   def self.up
-    change_column :heading, :header2, :text
+    change_column :headings, :header2, :text
   end
 
   def self.down
-    change_column :heading, :header2, :string
+    change_column :headings, :header2, :string
   end
 end
