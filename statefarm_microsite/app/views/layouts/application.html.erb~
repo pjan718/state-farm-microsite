@@ -3,7 +3,7 @@
 <head>
   <title>State Farm Microsite</title>
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag 'jquery.js', 'jquery-ujs.js', 'jquery.min.js' %>
+  <%= javascript_include_tag 'jquery.js', 'jquery_ujs.js', 'jquery.min.js', 'jquery.zclip.js', 'copyscript.js' %>
   
 
 <script>
@@ -12,9 +12,7 @@
   // e.g. $j('#div_id').stuff instead of $('#div_id').stuff
 //  var $j = jQuery.noConflict();
 </script>
-<script src="/javascripts/jquery.js" type="text/javascript"></script>
-<script src="/javascripts/jquery-ui.js" type="text/javascript"></script>
-<script src="/javascripts/jrails.js" type="text/javascript"></script>
+
 
 <%= csrf_meta_tag %>
 </head>

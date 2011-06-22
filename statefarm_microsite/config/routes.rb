@@ -1,7 +1,6 @@
 StatefarmMicrosite::Application.routes.draw do
-  resources :headings
-
   devise_for :admins
+  devise_for :users
   
   root :to => 'posts#user_view'
   match '/admin' => 'posts#index'
@@ -9,7 +8,7 @@ StatefarmMicrosite::Application.routes.draw do
     resources :posts
   end
   namespace :admin do
-    resources :posts
+   resources :posts
   end
   # match '/' => :controller => 'posts', :action => 'user_view'
   
