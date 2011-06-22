@@ -19,7 +19,7 @@ Here you'll find resources to help you promote your charity's GTB team on facebo
 		  # image_tag post.photo.url 
 		end %>
 	</td>
-	<td><p id='description'>asdfafa<%= post.description %></p>
+	<td><p id='description'><%= post.description %></p>
 	
 	<p>Posted <%= post.created_at.strftime("%Y-%m-%d %H:%M:%S").to_s %> </p>
 	</td>

@@ -1,8 +1,11 @@
 StatefarmMicrosite::Application.routes.draw do
   devise_for :admins
-
-  resources :posts
+  
   root :to => 'posts#user_view'
+  match '/admin' => 'posts#index'
+  namespace :admin do
+    resources :posts
+  end
   # match '/' => :controller => 'posts', :action => 'user_view'
   
   # The priority is based upon order of creation:
