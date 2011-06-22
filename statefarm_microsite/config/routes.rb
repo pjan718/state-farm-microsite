@@ -9,7 +9,7 @@ StatefarmMicrosite::Application.routes.draw do
     resources :posts
   end
   namespace :admin do
-   resources :posts
+    resources :posts
   end
   # match '/' => :controller => 'posts', :action => 'user_view'
   

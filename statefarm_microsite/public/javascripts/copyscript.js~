@@ -1,9 +1,9 @@
     
       //$('#textlink').each(function()
       //{
-	$( document).ready(function() {
+	$(document).ready(function() {
 	  $('#copy-description').zclip({
-	    path:'~/ZeroClipboard.swf',
+	    path:'/javascripts/ZeroClipboard.swf',
 	    copy:$('p#description').text()
 	  });
 	});

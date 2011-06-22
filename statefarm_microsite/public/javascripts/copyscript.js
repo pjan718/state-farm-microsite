@@ -1,12 +1,16 @@
     
       //$('#textlink').each(function()
       //{
-	//$( document).ready(function() {
+	$(document).ready(function() {
 	  $('#copy-description').zclip({
-	    path:'~/ZeroClipboard.swf',
-	    copy:$('p#description').text()
+	    path:'/javascripts/ZeroClipboard.swf',
+	    copy:$('p#description').text(),
+	    afterCopy:function(){
+		$(this).css('color','purple');
+		$(this).next('.check').show();
+	      }
 	  });
-	//});
+	});
       //});
 	/* 
       $('a#copy-description').zclip({
