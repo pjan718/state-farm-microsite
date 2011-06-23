@@ -4,11 +4,7 @@
 	$(document).ready(function() {
 	  $('#copy-description').zclip({
 	    path:'/javascripts/ZeroClipboard.swf',
-	    copy:$('p#description').text(),
-	    afterCopy:function(){
-		$(this).css('color','purple');
-		$(this).next('.check').show();
-	      }
+	    copy:$('#description').text()
 	  });
 	});
       //});

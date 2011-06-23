@@ -6,7 +6,7 @@ Here you'll find resources to help you promote your charity's GTB team on facebo
 
 <div>
 <%= Heading.find(:first, :conditions => ['visible = ?', true]).title.to_s %><br/>
-<%= Heading.Heading.find(:first, :conditions => ['visible = ?', true]).header2.to_s %><br/>
+<%= Heading.find(:first, :conditions => ['visible = ?', true]).header2.to_s %><br/>
 
 </div>
 
@@ -35,6 +35,7 @@ Here you'll find resources to help you promote your charity's GTB team on facebo
 		<%= 
 		if post.photo?
 		    link_to '> Download Image', post.photo.url.to_s
+		    
 		    # puts '<br/>'
 		end
 		  %>
@@ -49,11 +50,13 @@ Here you'll find resources to help you promote your charity's GTB team on facebo
 		    # puts '<br/>'
 		end
 		  %>
-		  <% 
-		if post.video?
-	      %>	<br/>
-	      
-	      <% end  %>
+		   <%= 
+		if post.asset?
+		    link_to '> Download Assets', post.asset.url.to_s
+		    # puts '<br/>'
+		end
+		  %>
+		
 		
 		  
 	</td>

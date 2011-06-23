@@ -12,17 +12,14 @@
 </p>
 
 <p>
-<b>Image:</b>
-<%= image_tag @post.photo.url %>
-</p>
 
-<p>
-<b>Video:</b>
-<%= if @post.video? then
-      link_to @post.video.url, 'Video Link' 
+<b>Asset:</b>
+<%= if @post.asset? then
+      link_to @post.asset.url, 'Asset Link' 
     end 
 %>
 </p>
+
 <p>
   <b>Visible:</b>
   <%= @post.visible %>

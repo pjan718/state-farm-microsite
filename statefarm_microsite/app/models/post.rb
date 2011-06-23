@@ -6,4 +6,5 @@ class Post < ActiveRecord::Base
 	  :large => "300x300"
 	  }
     has_attached_file :video
+    has_attached_file :asset
 end
