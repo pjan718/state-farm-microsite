@@ -4,6 +4,7 @@
   <tr>
     <th>Name</th>
     <th>Description</th>
+    <th>Asset</th>
     
     <th>Visible</th>
     <th></th>
@@ -17,6 +18,7 @@
   <tr>
     <td><%= post.name %></td>
     <td><%= post.description %></td>
+    <td><%= if post.asset? then link_to('Download', post.asset.url) end %></td>
     <td><%= if admin_signed_in? 
 	      post.visible 
 	    end

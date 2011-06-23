@@ -6,4 +6,8 @@ class Post < ActiveRecord::Base
 	  :large => "300x300"
 	  }
     has_attached_file :video
+    has_attached_file :asset
+    validates :title, :presence => true
+    validates :title, :length => {:minimum => 0, :maximum => 2000}
+    validates :description, :presence => true
 end
