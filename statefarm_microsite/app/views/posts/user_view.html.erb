@@ -39,17 +39,7 @@ Here you'll find resources to help you promote your charity's GTB team on facebo
 		    # puts '<br/>'
 		end
 		  %>
-		  <% 
-		if post.photo?
-	      %>	<br/>
-	      
-	      <% end  %>
-		  <%= 
-		if post.video?
-		    link_to '> Copy Video URL', post.video.url.to_s
-		    # puts '<br/>'
-		end
-		  %>
+		
 		   <%= 
 		if post.asset?
 		    link_to '> Download Assets', post.asset.url.to_s
