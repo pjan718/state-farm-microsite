@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
-
+<header>
+<ul id="headerText">
+	
+		<li class="headerTitle"><h1>VIEW RESOURCE</h1></li>
+		
+</ul>
+</header>
 
 <p>
   <b>Name:</b>
@@ -13,7 +19,7 @@
 <p>
 
 <b>Video:</b>
-<%= if @post.asset? then
+<%= if @post.video? then
       link_to @post.video.url , @post.video.url 
     end 
 %>
@@ -21,7 +27,7 @@
 <p>
 
 <b>Image:</b>
-<%= if @post.photo then
+<%= if @post.photo? then
       link_to @post.photo.url , @post.photo.url 
     end 
 %>

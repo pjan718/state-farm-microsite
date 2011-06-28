@@ -1,11 +1,12 @@
 <header>
 <ul id="headerText">
 	
-		<li class="headerTitle"><h1>NEW POST</h1></li>
+		<li class="headerTitle"><h1>EDIT FORM</h1></li>
 		
 </ul>
 </header>
 
 <%= render 'form' %>
 
+<%= link_to 'Show', @post %> |
 <%= link_to 'Back', posts_path %>
