@@ -23,59 +23,39 @@
 	</li>
 <!--POST 1 START-->
       
-	<li class="postSection1">
-		<div class="postThumb"><a href="#"><img src="images/post_thumb_1.png" alt="" /></a></div>
-		<div class="postInfo">
-			<p>The State Farm&reg; Go to Bat&trade; season has begun! Join our team and you could win a trip to the 2011 MLB&reg; World Series&reg;.
-			<a href="#" target="_blank">StateFarm.com/GoToBat</a>
-			</p>
-			<br/>
-			<p>Posted June 14, 2011</p>
-		</div>
-		<div class="downloadBtn"><a href="#"><img src="images/download_btn.png" alt="" /></a></div>
-	</li>
-<!--POST 1 END-->	
-<!--POST 2 START-->
-	<li class="postSection2">
-		<div class="postThumb"><a class="video" href="http://www.youtube.com/watch?v=U4HPdWYwgyw&amp;feature=fvst"><img src="_/images/post_thumb_2.png" alt="" /></a></div>
-		<div class="postInfo">
-			<p>The State Farm&reg; Go to Bat&trade; season has begun! Join our team and you could win a trip to the 2011 MLB&reg; World Series&reg;.
-			<a href="#" target="_blank">StateFarm.com/GoToBat</a>
-			</p>
-			<br/>
-			<p>Posted June 14, 2011</p>
-		</div>
-		<div class="downloadBtn"><a href="#"><img src="images/download_btn.png" alt="" /></a></div>
-	</li>
-	<% @posts.each do |post| %>
-
-	  <li class="postSection1">
-		<div class="postThumb"><a href="#"><%= 
-		if post.photo? and not post.video?
-		    image_tag(post.photo.url.to_s, :height => '119', :width => 178, :alt =>'thumbnail')
-		elsif post.photo? and post.video?    
-		    link_to(image_tag(post.photo.url, :border=>0, :height => '119', :width => 178), post.video.url.to_s)
-		else
-		    image_tag('blank.png', :height => '119', :width => '178')
-		end
-		  %></a></div>
-		
-		<div class="postInfo">
-			<p width="500px"><%= post.description %>
-			
-			</p>
-			<br/>
-			<p>Posted <%= post.created_at.strftime("%m/%d/%Y").to_s %></p>
-		</div>
-		<div class="downloadBtn">
-		<%= 
-		if post.asset?
-		   link_to(image_tag('download_btn.png', :border=>0), post.asset.url.to_s)
-		    # puts '<br/>'
-		end
-		  %>
-		</a></div>
-	  </li>
+	
+	<% @posts.each_with_index do |post, index| %>
+	  <% if post.visible? %>
+	      <li class="postSection<%= if index % 2 == 0 then 1.to_s else 2.to_s end %>">
+		    <div class="postThumb"><a href="#"><%= 
+		    if post.photo? and not post.video?
+			image_tag(post.photo.url.to_s, :height => '119', :width => 178, :alt =>'thumbnail')
+		    elsif post.photo? and post.video?    
+			link_to(image_tag(post.photo.url, :border=>0, :height => '119', :width => 178), post.video.url.to_s)
+		    else
+			image_tag('blank.png', :height => '119', :width => '178')
+		    end
+		      %></a></div>
+		    
+		    <div class="postInfo">
+			    <p width="500"><%= post.description %>
+			    
+			    </p>
+			    <br/>
+			    <p>Posted <%= post.created_at.strftime("%m/%d/%Y").to_s %></p>
+		    </div>
+		    <div class="downloadBtn">
+		    <%= 
+		    if post.asset?
+		      link_to(image_tag('download_btn.png', :border=>0), post.asset.url.to_s)
+			# puts '<br/>'
+		    else
+		      image_tag('blank.png', :width => '141', :height => '35')
+		    end
+		      %>
+		    </a></div>
+	      </li>
+	  <% end %>
 	<% end %>
 <!--POST 2 END-->
 
@@ -112,17 +92,18 @@
 </div>
 
 <script>
-	//
-	//$(function() {
-		// a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
-	//	$( "#dialog:ui-dialog" ).dialog( "destroy" );
 	
-	//	$( "#dialog-modal" ).dialog({
-	//		height: 360,
-	//		width: 440,
-	//		modal: true
-	//	});
-	// });
+	function videopopup() {
+		// a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
+		$( "#dialog:ui-dialog" ).dialog( "destroy" );
+	
+		$( "#dialog-modal" ).dialog({
+			height: 360,
+			width: 440,
+			modal: true
+		});
+	}
+	$("a").click(videopopup());
 	</script>
 
 
