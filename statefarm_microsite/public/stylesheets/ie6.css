@@ -1,0 +1,25 @@
+body {
+	overflow: none;
+	min-height: 100%;
+	width: 990px;
+	margin: 0 auto; /* center */ padding: 0 0 20px 0;
+	background-color:  #ebe8dc;
+}
+
+
+ul#headerText  {
+	margin:185px 0 0 50px; padding:0 0 0 0;
+	float:left;
+	text-align:left;
+	float:left;
+}
+
+ul#postPagination {
+	float:left;
+	margin:183px 0 0 190px; padding:0 0 0 0;
+	height:100px;
+	width:200px;
+	background-color:green;
+}
+
+footer #footerNav li { float:left; padding:0 10px 0 0;}

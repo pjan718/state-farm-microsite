@@ -10,12 +10,28 @@
   <b>Description:</b>
   <%= @post.description %>
 </p>
+<p>
+
+<b>Video:</b>
+<%= if @post.asset? then
+      link_to @post.video.url , @post.video.url 
+    end 
+%>
+</p>
+<p>
+
+<b>Image:</b>
+<%= if @post.photo then
+      link_to @post.photo.url , @post.photo.url 
+    end 
+%>
+</p>
 
 <p>
 
 <b>Asset:</b>
 <%= if @post.asset? then
-      link_to @post.asset.url, 'Asset Link' 
+      link_to @post.asset.url , @post.asset.url 
     end 
 %>
 </p>

@@ -1,14 +1,105 @@
-<h1>Charity Resource Page</h1>
+<%= javascript_include_tag 'jquery.bgiframe-2.1.2.js', 'jquery.ui.core.js', 'jquery.ui.widget.js', 'jquery.ui.mouse.js', 'jquery.ui.draggable.js', 'jquery.ui.position.js', 'jquery.ui.resizable.js',
+'jquery.ui.dialog.js' %>
+<link rel="stylesheet" type="text/css" href="stylesheets/jquery.fancybox-1.3.4.css" media="screen" />
+<link rel="stylesheet" href="stylesheets/style.css" />
+<script src="javascripts/modernizr-1.7.min.js"></script>
+  <link rel="shortcut icon" href="_/img/favicon.ico">
 
-<p>
-Here you'll find resources to help you promote your charity's GTB team on facebook.
-</p>
+	<!-- The is the icon for iOS's Web Clip. -->
+	<link rel="apple-touch-icon" href="_/img/apple-touch-icon.png">
+<header>
+<ul id="headerText">
+		<li class="headerTitle"><h1>CHARITY RESOURCES</h1></li>
+		<li><p>Here you'll find downloadable images, videos and conversation starters to engage with your fans.</p></li>
+</ul>
+</header>
+<section>
+<ul id="postArea">
+	<li class="postHeadline">
+		<h2>
+		    <%= Heading.find(:first, :conditions => ['visible = ?', true]).title.to_s %><br/>
+		    
+		</h2>
+	</li>
+<!--POST 1 START-->
+      
+	<li class="postSection1">
+		<div class="postThumb"><a href="#"><img src="images/post_thumb_1.png" alt="" /></a></div>
+		<div class="postInfo">
+			<p>The State Farm&reg; Go to Bat&trade; season has begun! Join our team and you could win a trip to the 2011 MLB&reg; World Series&reg;.
+			<a href="#" target="_blank">StateFarm.com/GoToBat</a>
+			</p>
+			<br/>
+			<p>Posted June 14, 2011</p>
+		</div>
+		<div class="downloadBtn"><a href="#"><img src="images/download_btn.png" alt="" /></a></div>
+	</li>
+<!--POST 1 END-->	
+<!--POST 2 START-->
+	<li class="postSection2">
+		<div class="postThumb"><a class="video" href="http://www.youtube.com/watch?v=U4HPdWYwgyw&amp;feature=fvst"><img src="_/images/post_thumb_2.png" alt="" /></a></div>
+		<div class="postInfo">
+			<p>The State Farm&reg; Go to Bat&trade; season has begun! Join our team and you could win a trip to the 2011 MLB&reg; World Series&reg;.
+			<a href="#" target="_blank">StateFarm.com/GoToBat</a>
+			</p>
+			<br/>
+			<p>Posted June 14, 2011</p>
+		</div>
+		<div class="downloadBtn"><a href="#"><img src="images/download_btn.png" alt="" /></a></div>
+	</li>
+<!--POST 2 END-->
+
+
+	
+	
+</ul>
+<!--POST SECTION END-->	
+</section>
+
+<footer>
+	<p>NO PURCHASE OR GAME PLAY NECESSARY TO ENTER OR WIN. Void in Quebec & where prohibited. Begins 12:00 a.m. CT on 7/12/10 & ends at 11:59 p.m. CT on 9/26/10.
+	Must be a legal resident of the 50 U.S., DC or Canadian provinces of Alberta, New Brunswick or Ontario, 18+ at time of entrzzty to participate.
+	Eligibility & other restrictions apply. <br/>Click here for Official Rules (with alternate method of entry) & complete details.</p>
+	<ul id="footerBtns">
+		<li><a href="http://www.statefarm.com" target="_blank"><img src="images/find_agent_btn.jpg" alt="" /></a></li>
+		<li><a href="http://www.statefarm.com" target="_blank"><img src="images/download_btn.jpg" alt="" /></a></li>
+	</ul>
+	
+	<ul id="footerNav">
+		<li><a href="#">Official Rules</a></li>
+		<li><a href="#">Privacy Policy</a></li>
+		<li><a href="#">Ask Us</a></li>
+		<li><a href="#">MLB Privacy Policy</a></li>
+	</ul>
+</footer>
+
+
 
 <div>
 <%= Heading.find(:first, :conditions => ['visible = ?', true]).title.to_s %><br/>
 <%= Heading.find(:first, :conditions => ['visible = ?', true]).header2.to_s %><br/>
 
 </div>
+
+<script>
+	//
+	//$(function() {
+		// a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
+	//	$( "#dialog:ui-dialog" ).dialog( "destroy" );
+	
+	//	$( "#dialog-modal" ).dialog({
+	//		height: 360,
+	//		width: 440,
+	//		modal: true
+	//	});
+	// });
+	</script>
+
+
+<div id="dialog-modal" title="Basic modal dialog">
+	<iframe width="425" height="349" src="http://www.youtube.com/embed/tqjrIf_IYa0" frameborder="0" allowfullscreen></iframe>
+</div>
+
 
 <table>
   <tr>
@@ -21,9 +112,16 @@ Here you'll find resources to help you promote your charity's GTB team on facebo
   <% if post.visible? %>
       <tr>
 	
-	<td><%= if post.photo?
-		  # image_tag post.photo.url 
-		end %>
+	<td>
+	    <%= 
+		if post.photo? and not post.video?
+		    image_tag(post.photo.url.to_s, :height => '80x80', :alt =>'thumbnail')
+		elsif post.photo? and post.video?    
+		    link_to(image_tag(post.photo.url, :border=>0), post.video.url.to_s)
+		end
+		  %>
+		
+	   
 	</td>
 	<td><p id='description'><%= post.description %></p>
 	
@@ -31,18 +129,11 @@ Here you'll find resources to help you promote your charity's GTB team on facebo
 	</td>
 	
 
-	<td><a id='copy-description' href='#'>> Copy Text</a><br>
-		<%= 
-		if post.photo?
-		    link_to '> Download Image', post.photo.url.to_s
-		    
-		    # puts '<br/>'
-		end
-		  %>
+	<td>
 		
 		   <%= 
 		if post.asset?
-		    link_to '> Download Assets', post.asset.url.to_s
+		    link_to '> Download Content', post.asset.url.to_s
 		    # puts '<br/>'
 		end
 		  %>

@@ -5,7 +5,8 @@
     <th>Name</th>
     <th>Description</th>
     <th>Asset</th>
-    
+    <th>Image</th>
+    <th>Video</th>
     <th>Visible</th>
     <th></th>
     <th></th>
@@ -18,7 +19,9 @@
   <tr>
     <td><%= post.name %></td>
     <td><%= post.description %></td>
-    <td><%= if post.asset? then link_to(post.asset.url, post.asset.url) end %></td>
+    <td><%= if post.asset? then link_to('Download', post.asset.url) end %></td>
+    <td><%= if post.photo? then link_to('Download', post.photo.url) end %></td>
+    <td><%= if post.video? then link_to('Download', post.video.url) end %></td>
     <td><%= if admin_signed_in? 
 	      post.visible 
 	    end
@@ -26,7 +29,7 @@
     </td>
     <td><%= link_to 'Show', post %></td>
     <td><%= if admin_signed_in? 
-	    link_to 'Edit', edit_post_path(post) 
+		link_to 'Edit', edit_post_path(post) 
 	    end %>
     </td>
     <td><%= if admin_signed_in? 

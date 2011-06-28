@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<content>
+<!-- GENERAL SETTINGS -->
+
+<player_width>855</player_width><!-- the total width for the player. -->
+<player_height>445</player_height><!--  the total height for the player. -->
+<description_window_width>600</description_window_width><!-- this is the width for the player description window. -->
+<auto_play>no</auto_play><!-- Enables or disables the autoplay option. -->
+<loop>yes</loop><!-- Enables or disables loop option -->
+<smoothing>false</smoothing>
+<bufferTime>3</bufferTime>
+<volume>80</volume>
+
+<!-- Thumnail Settings -->
+<thumb_width>230</thumb_width>
+<thumb_height>130</thumb_height><!-- GENERAL SETTINGS -->
+<thumb_horizontal_spacing>10</thumb_horizontal_spacing><!-- GENERAL SETTINGS -->
+<thumb_vertical_spacing>10</thumb_vertical_spacing> <!-- GENERAL SETTINGS -->
+
+<controlBarHideDelay>4</controlBarHideDelay><!-- GENERAL SETTINGS -->
+<controlBarAutoHide>yes</controlBarAutoHide><!-- GENERAL SETTINGS -->
+<disable_full_screen_button>no</disable_full_screen_button><!-- GENERAL SETTINGS -->
+<disable_description_button>no</disable_description_button><!-- GENERAL SETTINGS -->
+<disable_share_button>yes</disable_share_button><!-- GENERAL SETTINGS -->
+<disable_play_list_button>no</disable_play_list_button><!-- GENERAL SETTINGS -->
+<share_subject><![CDATA[Message from your friend]]></share_subject>
+<share_message><![CDATA[Hi. Your friend thought you might be interested in this video:<br>]]></share_message>
+
+<!-- PLAY LIST SETUP -->
+
+<play_list label="My favorites trailer collection">
+
+    <video>
+       <video_path>http://www.youtube.com/watch?v=fyJ8YkEKqJ4</video_path>
+	   <image_path>load/images/inception.jpg</image_path>
+	   <thumb_path>load/images/inceptionSmall.jpg</thumb_path>
+	   <thumb_description><![CDATA[INCEPTION]]></thumb_description>
+	   <description><![CDATA[<font color="#FFFFFF">INCEPTION</font><br>In a world where technology exists to enter the human mind through dream invasion, a highly skilled thief is given a final chance at redemption which involves executing his toughest job till date, Inception.<br><a href="http://www.imdb.com/title/tt1375666/" target="_blank">Click here for IMDB info!</a>]]></description>  
+    </video>
+
+	<video>
+       <video_path>http://www.youtube.com/watch?v=X4Jg-i00t5Q</video_path>
+	   <image_path>load/images/tron.jpg</image_path>
+	   <thumb_path>load/images/tronSmall.jpg</thumb_path>
+	   <thumb_description><![CDATA[NEW TRON LEGACY]]></thumb_description>
+	   <description><![CDATA[<font color="#FFFFFF">NEW TRON LEGACY</font><br>Sam Flynn, the tech-savvy 27-year-old son of Kevin Flynn, looks into his father's disappearance and finds himself pulled into the same world of fierce programs and gladiatorial games where his father has been living for 20 years.<br><a href="http://www.imdb.com/title/tt1104001/" target="_blank">Click here for IMDB info!</a>]]></description>  
+    </video>
+
+    <video>
+       <video_path>load/videos/bruno.flv</video_path>
+	   <image_path>load/images/bruno.jpg</image_path>
+	   <thumb_path>load/images/brunoSmall.jpg</thumb_path>
+	   <thumb_description><![CDATA[BRÜNO]]></thumb_description>
+	   <description><![CDATA[<font color="#FFFFFF">BRÜNO</font><br>Brüno is a gay Austrian fashion guru. He has his own fashion based television show, Funkyzeit, the most popular German-language show of its kind outside of Germany. After he disgraces himself in front of his Funkyzeit fan base, he is ruined in German speaking Europe. He decides that in his quest for worldwide fame, he will move to Los Angeles and reinvent himself. Accompanying him to the US is Lutz, his former assistant's assistant. Lutz is the only person left in his circle that still believes in Brüno's greatness. Brüno goes through one reinvention of himself after another, ultimately straying to areas far removed from his own self. Perhaps when Brüno finds an activity that he truly does love, he will also find that über-fame he so desperately desires.<br><a href="http://www.imdb.com/title/tt0889583/" target="_blank">Click here for IMDB info!</a>]]></description>  
+    </video>
+   
+    <video>
+       <video_path>http://www.youtube.com/watch?v=vghUONaNDZg</video_path>
+	   <image_path>load/images/the_next_three_days.jpg</image_path>
+	   <thumb_path>load/images/the_next_three_daysSmall.jpg</thumb_path>
+	   <thumb_description><![CDATA[THE NEXT THREE DAYS]]></thumb_description>
+	   <description><![CDATA[<font color="#FFFFFF">THE NEXT THREE DAYS</font><br>"The Next Three Days" is a tight, hard-hitting thriller that had me on the edge of my seat throughout the film. I really didn't know, right up to the final moments, how it would end – and because the film had expertly guided me to care about all the characters, even some random losers in a meth lab, I did care about how it would end. The actors are all good with Russell Crowe especially so, and the realistically gritty sets perfectly match the film's desperate tone. Elizabeth Banks' too-good-to-be-true wholesome, sunny good looks are well used. "The Next Three Days" reminded me of Hitchcock, and of 1993's "The Fugitive," but it doesn't rise to that level of classic. Rather, it's a well-oiled machine, designed efficiently to crank out the audience's engagement, tension and release.<br><a href="http://www.imdb.com/title/tt1458175/" target="_blank">Click here for IMDB info!</a>]]></description>  
+    </video>
+	
+	
+	
+</play_list>
+
+</content>	
