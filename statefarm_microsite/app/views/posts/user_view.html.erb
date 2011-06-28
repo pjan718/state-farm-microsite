@@ -48,6 +48,7 @@
 		<div class="downloadBtn"><a href="#"><img src="images/download_btn.png" alt="" /></a></div>
 	</li>
 	<% @posts.each do |post| %>
+
 	  <li class="postSection1">
 		<div class="postThumb"><a href="#"><%= 
 		if post.photo? and not post.video?
@@ -60,11 +61,11 @@
 		  %></a></div>
 		
 		<div class="postInfo">
-			<p>The State Farm&reg; Go to Bat&trade; season has begun! Join our team and you could win a trip to the 2011 MLB&reg; World Series&reg;.
-			<a href="#" target="_blank">StateFarm.com/GoToBat</a>
+			<p width="500"><%= post.description %>
+			
 			</p>
 			<br/>
-			<p>Posted June 14, 2011</p>
+			<p>Posted <%= post.created_at.strftime("%m/%d/%Y").to_s %></p>
 		</div>
 		<div class="downloadBtn">
 		<%= 
