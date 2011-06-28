@@ -1,56 +1,68 @@
 <header>
 <ul id="headerText">
 	
-		<li class="headerTitle"><h1>RESOURCES ADMIN</h1></li>
+		<li class="headerTitle"><h1>ADMINISTRATION</h1></li>
 		<li><p>Administer your site</p></li>
 </ul>
 </header>
 
+<section>
+<ul id="postArea">
+<li class="postSection1">
+		
+	      <table width="600">
+	<tr>
+	  <th>Name</th>
+	  <th>Description</th>
+	  <th>Asset</th>
+	  <th>Image</th>
+	  <th>Video</th>
+	  <th>Visible</th>
+	  <th></th>
+	  <th></th>
+	  <th></th>
+	</tr>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Asset</th>
-    <th>Image</th>
-    <th>Video</th>
-    <th>Visible</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+      <%= link_to 'Headers', headings_path %>
 
-<%= link_to 'Headers', headings_path %>
+      <% @posts.each do |post| %>
+	<tr>
+	  <td><%= post.name %></td>
+	  <td><%= post.description %></td>
+	  <td><%= if post.asset? then link_to('Download', post.asset.url) end %></td>
+	  <td><%= if post.photo? then link_to('Download', post.photo.url) end %></td>
+	  <td><%= if post.video? then link_to('Download', post.video.url) end %></td>
+	  <td><%= if admin_signed_in? 
+		    post.visible 
+		  end
+	      %>
+	  </td>
+	  <td><%= link_to 'Show', post %></td>
+	  <td><%= if admin_signed_in? 
+		      link_to 'Edit', edit_post_path(post) 
+		  end %>
+	  </td>
+	  <td><%= if admin_signed_in? 
+		      link_to 'Delete', post, :confirm => 'Are you sure?', :method => :delete 
+		  end
+	      %>
+	  </td>
+	</tr>
+      <% end %>
+      </table>
 
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= post.name %></td>
-    <td><%= post.description %></td>
-    <td><%= if post.asset? then link_to('Download', post.asset.url) end %></td>
-    <td><%= if post.photo? then link_to('Download', post.photo.url) end %></td>
-    <td><%= if post.video? then link_to('Download', post.video.url) end %></td>
-    <td><%= if admin_signed_in? 
-	      post.visible 
-	    end
-	%>
-    </td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= if admin_signed_in? 
-		link_to 'Edit', edit_post_path(post) 
-	    end %>
-    </td>
-    <td><%= if admin_signed_in? 
-		link_to 'Delete', post, :confirm => 'Are you sure?', :method => :delete 
-	    end
-	%>
-    </td>
-  </tr>
-<% end %>
-</table>
+      <br />
 
-<br />
+      <%= if admin_signed_in? 
+	      link_to 'New Post', new_post_path 
+	  end
+      %>
+      <!--POST 2 END-->
 
-<%= if admin_signed_in? 
-	link_to 'New Post', new_post_path 
-    end
-%>
+
+	
+</li>	
+</ul>
+<!--POST SECTION END-->	
+</section>
+

@@ -13,6 +13,10 @@
 		<li><p>Here you'll find downloadable images, videos and conversation starters to engage with your fans.</p></li>
 </ul>
 </header>
+      <div id="dialog-modal">
+	<iframe width="425" height="349" src="http://www.youtube.com/embed/tqjrIf_IYa0" frameborder="0" allowfullscreen></iframe>
+      </div>
+
 <section>
 <ul id="postArea">
 	<li class="postHeadline">
@@ -22,7 +26,7 @@
 		</h2>
 	</li>
 <!--POST 1 START-->
-      
+   
 	
 	<% @posts.each_with_index do |post, index| %>
 	  <% if post.visible? %>
@@ -66,13 +70,7 @@
 <!--POST SECTION END-->	
 </section>
 
-
-
-
-
-
-
-<script>
+	<script>
 	
 	function videopopup() {
 		// a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
@@ -83,17 +81,15 @@
 			width: 440,
 			modal: true
 		});
+		var d = $("#dialog:ui-dialog").position();
+		window.scrollTo( d.left , d.top);
+
 	}
-	$("a").click(videopopup());
+ 
+	$("a").click(videopopup);
+	$(document).ready(function() {
+	  	$("#dialog-modal").hide();
+		
+	});  
+	//$("a").click(videopopup())
 	</script>
-
-
-<div id="dialog-modal" title="Basic modal dialog">
-	<iframe width="425" height="349" src="http://www.youtube.com/embed/tqjrIf_IYa0" frameborder="0" allowfullscreen></iframe>
-</div>
-
-
-
-
-<br />
-

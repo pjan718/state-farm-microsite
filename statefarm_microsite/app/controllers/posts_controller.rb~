@@ -2,11 +2,11 @@ class PostsController < ApplicationController
   before_filter :authenticate_admin!, :only => [:index, :edit, :create, :destroy]
   before_filter :authenticate_user!, :only => [:user_view]
   
-  def download
-    @post = Post.find(params[:id]).photo.url.to_s
+ # def download
+   # @post = Post.find(params[:id]).photo.url.to_s
    # send_file("#{RAILS_ROOT}/" + post.photo.url.to_s, :type => 'image/jpeg', :disposition => 'true' #attachment will be downloaded.
 
-  end
+  #end
   
   # GET /posts
   # GET /posts.xml

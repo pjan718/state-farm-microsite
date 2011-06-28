@@ -2,50 +2,55 @@
 <header>
 <ul id="headerText">
 	
-		<li class="headerTitle"><h1>VIEW RESOURCE</h1></li>
+		<li class="headerTitle"><h1>VIEW POST</h1></li>
 		
 </ul>
 </header>
+<section>
+  <ul id="postArea">
+  <li class="postSection1">
+      <p>
+	<b>Name:</b>
+	<%= @post.name %>
+      </p>
 
-<p>
-  <b>Name:</b>
-  <%= @post.name %>
-</p>
+      <p>
+	<b>Description:</b>
+	<%= @post.description %>
+      </p>
+      <p>
 
-<p>
-  <b>Description:</b>
-  <%= @post.description %>
-</p>
-<p>
+      <b>Video:</b>
+      <%= if @post.video? then
+	    link_to @post.video.url , @post.video.url 
+	  end 
+      %>
+      </p>
+      <p>
 
-<b>Video:</b>
-<%= if @post.video? then
-      link_to @post.video.url , @post.video.url 
-    end 
-%>
-</p>
-<p>
+      <b>Image:</b>
+      <%= if @post.photo? then
+	    link_to @post.photo.url , @post.photo.url 
+	  end 
+      %>
+      </p>
 
-<b>Image:</b>
-<%= if @post.photo? then
-      link_to @post.photo.url , @post.photo.url 
-    end 
-%>
-</p>
+      <p>
 
-<p>
+      <b>Asset:</b>
+      <%= if @post.asset? then
+	    link_to @post.asset.url , @post.asset.url 
+	  end 
+      %>
+      </p>
 
-<b>Asset:</b>
-<%= if @post.asset? then
-      link_to @post.asset.url , @post.asset.url 
-    end 
-%>
-</p>
+      <p>
+	<b>Visible:</b>
+	<%= @post.visible %>
+      </p>
 
-<p>
-  <b>Visible:</b>
-  <%= @post.visible %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Posts Home', posts_path %>
+      <%= link_to 'Edit', edit_post_path(@post) %> |
+      <%= link_to 'Posts Home', posts_path %>
+    </li>
+  </ul>
+</section>
