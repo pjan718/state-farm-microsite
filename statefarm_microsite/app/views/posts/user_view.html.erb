@@ -13,9 +13,7 @@
 		<li><p>Here you'll find downloadable images, videos and conversation starters to engage with your fans.</p></li>
 </ul>
 </header>
-      <div id="dialog-modal">
-	<iframe width="425" height="349" src="http://www.youtube.com/embed/tqjrIf_IYa0" frameborder="0" allowfullscreen></iframe>
-      </div>
+     
 
 <section>
 <ul id="postArea">
@@ -30,6 +28,11 @@
 	
 	<% @posts.each_with_index do |post, index| %>
 	  <% if post.visible? %>
+	      <div id="dialog-modal<%= index %>" class="dialogdivs">
+		<iframe width="425" height="349" src="" frameborder="0" allowfullscreen></iframe>
+	      </div>
+
+
 	      <li class="postSection<%= if index % 2 == 0 then 1.to_s else 2.to_s end %>">
 		    <div class="postThumb"><a href="#"><%= 
 		    if post.photo? and not post.video?
@@ -88,7 +91,7 @@
  
 	$("a").click(videopopup);
 	$(document).ready(function() {
-	  	$("#dialog-modal").hide();
+	  	$(".dialogdivs").hide();
 		
 	});  
 	//$("a").click(videopopup())
