@@ -130,6 +130,16 @@ header  {
 	margin:0 0 0 0; padding:0 0 0 0;
 }
 
+#indextable {
+  width:600px;
+  margin:4 4 4 4; padding:4 4 4 4;
+}
+
+p.copytext {
+  width:370px;
+  
+}
+
 ul#headerText  {
 	margin:185px 0 0 100px; padding:0 0 0 0;
 	float:left;
@@ -161,7 +171,7 @@ section {
 ul#postArea li.postHeadline {
 	background: url('../images/post_suggestions.jpg') no-repeat;
 	height:54px;
-	widht:990px;
+	width:990px;
 	margin:0 0 0 0; padding:0 0 0 100px;
 }
 
@@ -169,6 +179,37 @@ ul#postArea li.postSection1 {
 	background: url('../images/post_bg_1.jpg') no-repeat;
 	height:158px;
 	width:990px;
+}
+
+ul#postArea li.postSectionBig {
+	background: url('../images/dark_bg.gif');
+	background-repeat:repeat;
+	height:1200px;
+	width:990px;
+	color:black; 
+}
+
+ul#postArea li.postSectionMedium {
+	background: url('../images/dark_bg.gif');
+	background-repeat:repeat;
+	height:600px;
+	width:990px;
+	color:black; 
+}
+
+ul#postArea li.postSectionIndex {
+	background: url('../images/post_bg_4.jpg');
+	background-repeat:repeat;
+	height:6700px;
+	width:990px;
+	color:black; 
+}
+
+
+
+ul#postArea li.postSectionBig  select, input, textarea {
+	
+	color:#000; 
 }
 
 div.postThumb {

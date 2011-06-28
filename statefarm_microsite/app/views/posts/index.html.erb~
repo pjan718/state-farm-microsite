@@ -8,9 +8,9 @@
 
 <section>
 <ul id="postArea">
-<li class="postSection1">
+<li class="postSectionBig">
 		
-	      <table width="600">
+	      <table width="600px">
 	<tr>
 	  <th>Name</th>
 	  <th>Description</th>

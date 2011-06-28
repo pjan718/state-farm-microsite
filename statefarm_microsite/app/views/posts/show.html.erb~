@@ -15,17 +15,17 @@
       </p>
 
       <p>
+	<b>Video:</b>
+	<%= @post.videolink %>
+      </p>
+      <p>
+
+       <p>
 	<b>Description:</b>
 	<%= @post.description %>
       </p>
       <p>
 
-      <b>Video:</b>
-      <%= if @post.video? then
-	    link_to @post.video.url , @post.video.url 
-	  end 
-      %>
-      </p>
       <p>
 
       <b>Image:</b>

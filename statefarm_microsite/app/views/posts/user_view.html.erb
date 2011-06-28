@@ -29,23 +29,24 @@
 	<% @posts.each_with_index do |post, index| %>
 	  <% if post.visible? %>
 	      <div id="dialog-modal<%= index %>" class="dialogdivs">
-		<iframe width="425" height="349" src="" frameborder="0" allowfullscreen></iframe>
+		<iframe width="425" height="349" src="http://www.youtube.com/embed/tqjrIf_IYa0" frameborder="0" allowfullscreen></iframe>
+
 	      </div>
 
 
 	      <li class="postSection<%= if index % 2 == 0 then 1.to_s else 2.to_s end %>">
 		    <div class="postThumb"><a href="#"><%= 
-		    if post.photo? and not post.video?
-			image_tag(post.photo.url.to_s, :height => '119', :width => 178, :alt =>'thumbnail')
-		    elsif post.photo? and post.video?    
-			link_to(image_tag(post.photo.url, :border=>0, :height => '119', :width => 178), post.video.url.to_s)
+		    if post.photo? and not post.videolink?
+			image_tag(post.photo.url.to_s, :height => '119', :width => '178', :alt =>'thumbnail')
+		    elsif post.photo? and post.videolink?    
+			link_to(image_tag(post.photo.url, :border=>0, :height => '119', :width => '178'), '#')
 		    else
 			image_tag('blank.png', :height => '119', :width => '178')
 		    end
 		      %></a></div>
 		    
 		    <div class="postInfo">
-			    <p width="500"><%= post.description %>
+			    <p class="copytext" ><%= simple_format(post.description) %>
 			    
 			    </p>
 			    <br/>
@@ -77,19 +78,28 @@
 	
 	function videopopup() {
 		// a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
-		$( "#dialog:ui-dialog" ).dialog( "destroy" );
-	
-		$( "#dialog-modal" ).dialog({
+		$("#dialog:ui-dialog").dialog( "destroy" );
+		
+	/*
+		$("#dialog-modal4").dialog({
 			height: 360,
 			width: 440,
 			modal: true
 		});
+	*/	
+		$("#dialog-modal4").dialog({
+			height: 360,
+			width: 440,
+			modal: true
+		});
+		
 		var d = $("#dialog:ui-dialog").position();
-		window.scrollTo( d.left , d.top);
+		//window.scrollTo( d.left , d.top);
 
 	}
  
 	$("a").click(videopopup);
+	//$("a").click(videopopup);
 	$(document).ready(function() {
 	  	$(".dialogdivs").hide();
 		

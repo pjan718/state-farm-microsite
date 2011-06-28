@@ -1,5 +1,15 @@
-<h1>New heading</h1>
-
+<header>
+<ul id="headerText">
+	
+		<li class="headerTitle"><h1>NEW HEADER</h1></li>
+		
+</ul>
+</header>
+<section>
+<ul id="postArea">
+<li class="postSectionBig">
 <%= render 'form' %>
-
+</li>
+</ul>
 <%= link_to 'Back', headings_path %>
+</section>
