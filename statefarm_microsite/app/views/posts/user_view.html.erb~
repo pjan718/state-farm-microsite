@@ -47,22 +47,18 @@
 		</div>
 		<div class="downloadBtn"><a href="#"><img src="images/download_btn.png" alt="" /></a></div>
 	</li>
-<!--POST 2 END-->
-<!--POST 3 START-->
-	<li class="postSection3">
-		<div class="postThumb"><a href="#"><img src="images/post_thumb_3.png" alt="" /></a></div>
-		<div class="postInfo">
-			<p>See why Mandy Moore is going to bat for charity. 
-			</p>
-			<br/>
-			<p>Posted June 14, 2011</p>
-		</div>
-		<div class="downloadBtn"><a href="#"><img src="images/download_btn.png" alt="" /></a></div>
-	</li>
-<!--POST 3 END-->
-<!--POST 4 START-->
-	<li class="postSection4">
-		<div class="postThumb"><a class="video" href="http://www.youtube.com/watch?v=HyrWd_gfQNQ"><img src="images/post_thumb_4.png" alt="" /></a></div>
+	<% @posts.each do |post| %>
+	  <li class="postSection1">
+		<div class="postThumb"><a href="#"><%= 
+		if post.photo? and not post.video?
+		    image_tag(post.photo.url.to_s, :height => '119', :width => 178, :alt =>'thumbnail')
+		elsif post.photo? and post.video?    
+		    link_to(image_tag(post.photo.url, :border=>0, :height => '119', :width => 178), post.video.url.to_s)
+		else
+		    image_tag('blank.png', :height => '119', :width => '178')
+		end
+		  %></a></div>
+		
 		<div class="postInfo">
 			<p>The State Farm&reg; Go to Bat&trade; season has begun! Join our team and you could win a trip to the 2011 MLB&reg; World Series&reg;.
 			<a href="#" target="_blank">StateFarm.com/GoToBat</a>
@@ -70,10 +66,18 @@
 			<br/>
 			<p>Posted June 14, 2011</p>
 		</div>
-		<div class="downloadBtn"><a href="#"><img src="images/download_btn.png" alt="" /></a></div>
-	</li>
-	<!--POST 4 END-->
-	
+		<div class="downloadBtn">
+		<%= 
+		if post.asset?
+		   link_to(image_tag('download_btn.png', :border=>0, :height => '119', :width => 178), post.asset.url.to_s)
+		    # puts '<br/>'
+		end
+		  %>
+		</a></div>
+	  </li>
+	<% end %>
+<!--POST 2 END-->
+
 
 	
 	

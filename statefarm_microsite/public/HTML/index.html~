@@ -39,7 +39,7 @@
  	<link rel="stylesheet" href="style.css" />
 		
 	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
-	<script src="_/js/modernizr-1.7.min.js"></script>
+	<script src="javascripts/modernizr-1.7.min.js"></script>
 
 </head>
 

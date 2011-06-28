@@ -47,6 +47,35 @@
 		</div>
 		<div class="downloadBtn"><a href="#"><img src="images/download_btn.png" alt="" /></a></div>
 	</li>
+	<% @posts.each do |post| %>
+	  <li class="postSection1">
+		<div class="postThumb"><a href="#"><%= 
+		if post.photo? and not post.video?
+		    image_tag(post.photo.url.to_s, :height => '119', :width => 178, :alt =>'thumbnail')
+		elsif post.photo? and post.video?    
+		    link_to(image_tag(post.photo.url, :border=>0, :height => '119', :width => 178), post.video.url.to_s)
+		else
+		    image_tag('blank.png', :height => '119', :width => '178')
+		end
+		  %></a></div>
+		
+		<div class="postInfo">
+			<p>The State Farm&reg; Go to Bat&trade; season has begun! Join our team and you could win a trip to the 2011 MLB&reg; World Series&reg;.
+			<a href="#" target="_blank">StateFarm.com/GoToBat</a>
+			</p>
+			<br/>
+			<p>Posted June 14, 2011</p>
+		</div>
+		<div class="downloadBtn">
+		<%= 
+		if post.asset?
+		   link_to(image_tag('download_btn.png', :border=>0), post.asset.url.to_s)
+		    # puts '<br/>'
+		end
+		  %>
+		</a></div>
+	  </li>
+	<% end %>
 <!--POST 2 END-->
 
 
