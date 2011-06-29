@@ -92,7 +92,7 @@ mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: b
 /*///////////////GLOBAL STYLES////////////////*/
 
 html {
-	background-color:#000;
+	background-color:#fff;
 	overflow: auto; height: 100%;
 		
 }
@@ -103,7 +103,7 @@ body {
 	min-height: 100%;
 	width: 990px;
 	margin: 0 auto; /* center */ padding: 0 0 0 0;
-	background-color: #000;
+	background-color: #fff;
 }
 
 
