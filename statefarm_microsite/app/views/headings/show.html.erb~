@@ -1,15 +1,5 @@
 <p id="notice"><%= notice %></p>
-<header>
-<ul id="headerText">
-	
-		<li class="headerTitle"><h1>EDIT HEADING</h1></li>
-		
-</ul>
-</header>
 
-<section>
-<ul id="postArea">
-<li class="postSectionMedium">
 <p>
   <b>Title:</b>
   <%= @heading.title %>
@@ -28,7 +18,3 @@
 
 <%= link_to 'Edit', edit_heading_path(@heading) %> |
 <%= link_to 'Back', headings_path %>
-</li>	
-</ul>
-<!--POST SECTION END-->	
-</section>

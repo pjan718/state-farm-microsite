@@ -1,4 +1,10 @@
-<h1>Editing heading</h1>
+<header>
+<ul id="headerText">
+	
+		<li class="headerTitle"><h1>EDIT HEADING</h1></li>
+		
+</ul>
+</header>
 
 <%= render 'form' %>
 
