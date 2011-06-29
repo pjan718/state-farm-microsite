@@ -1,4 +1,15 @@
-<h2>Forgot your password?</h2>
+<header>
+<ul id="headerText">
+	
+		<li class="headerTitle"><h1>Forgot Password</h1></li>
+		
+</ul>
+</header>
+<section>
+<ul id="postArea">
+<li class="postSectionMedium">
+
+<div class="postThumb"><%= image_tag('blank.png', :height => '419', :width => '178') %></div>
 
 <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
   <%= devise_error_messages! %>

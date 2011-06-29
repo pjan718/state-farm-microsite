@@ -9,7 +9,7 @@
 <ul id="postArea">
 <li class="postSection1">
 
-<div class="postThumb"><%= image_tag('blank.png', :height => '119', :width => '178') %></div>
+<div class="postThumb"><%= image_tag('blank.png', :height => '200', :width => '178') %></div>
 		    
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -26,9 +26,13 @@
   <p><%= f.submit "Sign up" %></p>
 <% end %>
 
+
+
+</li>
+
+<li class="postSection2">
+
 <%= render :partial => "devise/shared/links" %>
-
-
 </li>
 </ul>
 </section>
