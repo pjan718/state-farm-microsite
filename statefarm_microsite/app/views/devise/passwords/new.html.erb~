@@ -9,7 +9,7 @@
 <ul id="postArea">
 <li class="postSection1">
 
-<div class="postThumb"><%= image_tag('blank.png', :height => '100', :width => '178') %></div>
+<div class="postThumb"><%= image_tag('blank.png', :height => '119', :width => '178') %></div>
 
 <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
   <%= devise_error_messages! %>
