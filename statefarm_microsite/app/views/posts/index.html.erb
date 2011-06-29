@@ -28,7 +28,7 @@
       <% @posts.each do |post| %>
 	<tr>
 	  <td><%= post.name %></td>
-	  <td><%= post.description %></td>
+	  <td width="100"><%= post.description %></td>
 	  <td><%= if post.asset? then link_to('Download', post.asset.url) end %></td>
 	  <td><%= if post.photo? then link_to('Download', post.photo.url) end %></td>
 	  <td><%= if post.video? then link_to('Download', post.video.url) end %></td>

@@ -15,7 +15,6 @@
 <table>
   <tr>
     <th>Title</th>
-    <th>Header2</th>
     <th>Visible</th>
     <th></th>
     <th></th>
@@ -25,7 +24,6 @@
 <% @headings.each do |heading| %>
   <tr>
     <td><%= heading.title %></td>
-    <td><%= heading.header2 %></td>
     <td><%= heading.visible %></td>
     <td><%= link_to 'Show', heading %></td>
     <td><%= link_to 'Edit', edit_heading_path(heading) %></td>

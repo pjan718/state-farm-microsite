@@ -19,7 +19,7 @@
 <ul id="postArea">
 	<li class="postHeadline">
 		<h2>
-		    <%= Heading.find(:first, :conditions => ['visible = ?', true]).title.to_s %><br/>
+		    <%= if Heading.where(:visible => true).empty? then '' else Heading.find(:first, :conditions => ['visible = ?', true]).title.to_s end %><br/>
 		    
 		</h2>
 	</li>

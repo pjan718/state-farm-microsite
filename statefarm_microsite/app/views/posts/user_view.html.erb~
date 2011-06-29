@@ -19,7 +19,7 @@
 <ul id="postArea">
 	<li class="postHeadline">
 		<h2>
-		    <%= Heading.find(:first, :conditions => ['visible = ?', true]).title.to_s %><br/>
+		    <%= if Heading.where(:visible => true).empty? then '' else Heading.find(:first, :conditions => ['visible = ?', true]).title.to_s end %><br/>
 		    
 		</h2>
 	</li>
@@ -102,7 +102,7 @@
 			    $("#thumbnail<%= post.id %>").click(function () {
 			      $("#dialog-modal<%= post.id %>").dialog({
 				    height: 450,
-				    width: 545,
+				    width: 540,
 				    position: 'center',
 				    modal: true
 			    });
