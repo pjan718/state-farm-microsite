@@ -39,7 +39,7 @@
 		    if post.photo? and not post.videolink?
 			image_tag(post.photo.url, :height => '119', :width => '178')
 		    elsif post.photo? and post.videolink?    
-			image_tag(post.photo.url, :border=>0, :height => '119', :width => '178')
+			image_tag(post.photo.url, :border=>0, :height => '119', :width => '178', :id => ('thumbnail' + post.id.to_s)
 		    else
 			image_tag('blank.png', :height => '119', :width => '178')
 		    end
@@ -86,26 +86,31 @@
 			width: 440,
 			modal: true
 		});
-	*/	<% @posts.each_with_index do |post, index| %>
-		    <% if post.visible? %>
-		      <% if post.videolink? %>
-	
-			    $("#dialog-modal").dialog({
-				    height: 360,
-				    width: 440,
-				    position: 'center',
-				    modal: true
-			    });
-		      <% end %>
-		    <% end %>
-		<% end %>
+	*/	
 		// prevents browser from scrolling to top on each click by forcing
 		// broswer to scroll to where video is playing
 		//var d = $("#dialog-modal8").position();
 		//window.scrollTo( d.left , d.top);
 
 	}
-	      $("img").click(videopopup);
+
+	<% @posts.each_with_index do |post, index| %>
+		    <% if post.visible? %>
+		      <% if post.videolink? %>
+	
+			    $("#thumbnail<%= post.id %>").click(function () {
+			      $("#dialog-modal<%= post.id %>").dialog({
+				    height: 360,
+				    width: 440,
+				    position: 'center',
+				    modal: true
+			    });
+			    });
+		      <% end %>
+		    <% end %>
+		<% end %>
+
+	      
 		//$("a").click(videopopup);
 	$(document).ready(function() {
 	  	$(".dialogdivs").hide();
