@@ -12,7 +12,6 @@ gem 'heroku'
 gem 'aws-s3'
 gem 'right_aws'
 gem 'jquery-rails'
-gem 'sanitize'
 
 # Use unicorn as the web server
 # gem 'unicorn'
